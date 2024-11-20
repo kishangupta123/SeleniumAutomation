@@ -32,7 +32,7 @@ import objectrepository.WelcomePage;
 public class BaseClass {
 	/**
 	 * This is used to make global variable so that we can use it anywhere
-	 * throughout the project
+	 * throughout the project 
 	 */
 	public static ExtentReports extentReports;
 	public static ExtentTest test;
@@ -47,11 +47,12 @@ public class BaseClass {
 	public WebDriverUtility webdriver = new WebDriverUtility();
 	public FileUtility futil = new FileUtility();
 	public ExcelUtility eutil = new ExcelUtility();
-	
+
 	public WelcomePage wp;
 	public LoginPage lp;
 	public HomePage hp;
 	public Logout lo;
+
 	/**
 	 * This is used for database connection and report configuration
 	 */
@@ -82,22 +83,22 @@ public class BaseClass {
 		} else {
 			Reporter.log("Wrong browser entered");
 		}
-		
+
 		sdriver = driver;
-		
 
 		driver.get(futil.getDataFromProperty("url"));
 	}
 
 	/**
 	 * This is used to login to the application
-	 * @throws IOException 
+	 * 
+	 * @throws IOException
 	 */
 	@BeforeMethod
 	public void login() throws IOException {
 		wp = new WelcomePage(driver);
 		wp.getLoginLink().click();
-		
+
 		lp = new LoginPage(driver);
 		lp.getEmailTF().sendKeys(futil.getDataFromProperty("email"));
 		lp.getPasswordTF().sendKeys(futil.getDataFromProperty("password"));
