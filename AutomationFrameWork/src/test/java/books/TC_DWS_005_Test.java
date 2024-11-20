@@ -20,7 +20,7 @@ public class TC_DWS_005_Test extends BaseClass {
 
 		hp = new HomePage(driver);
 		hp.getBooksLink().click();
-		Assert.assertNotEquals(driver.getTitle(), eutil.getStringDataFromExcel("books", 1, 0),
+		Assert.assertEquals(driver.getTitle(), eutil.getStringDataFromExcel("books", 1, 0),
 				"Books page is not displayed");
 		test.log(Status.PASS, "Books page is displayed");
 	}

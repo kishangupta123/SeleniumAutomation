@@ -21,7 +21,7 @@ public class TC_DWS_006_Test extends BaseClass {
 
 		hp = new HomePage(driver);
 		hp.getElectronicsLink().click();
-		Assert.assertNotEquals(driver.getTitle(), eutil.getStringDataFromExcel("electronics", 1, 0),
+		Assert.assertEquals(driver.getTitle(), eutil.getStringDataFromExcel("electronics", 1, 0),
 				"Electronics page is not displayed");
 		test.log(Status.PASS, "Electronics page is displayed");
 	}
